@@ -1,6 +1,7 @@
 package ooc.yoursolution;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -18,5 +19,5 @@ public interface BookingSystemInterface {
      * @throws IOException 
      */
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException;
-    
+
 }
