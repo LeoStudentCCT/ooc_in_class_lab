@@ -23,8 +23,8 @@ public class BookingSystem implements BookingSystemInterface {
         List<CarInterface> cars = new ArrayList<>();
         name = in.readLine();
 
-        while ((st = in.readLine()) != null) {
-            String s[] = st.split(":");
+        while ((st = in.readLine()) != null) {//while loop reads car list 
+            String s[] = st.split(":");// : divides every bit of info from the list
 
             Make make = Make.valueOf(s[0]);
             double rate = Double.parseDouble(s[1]);
