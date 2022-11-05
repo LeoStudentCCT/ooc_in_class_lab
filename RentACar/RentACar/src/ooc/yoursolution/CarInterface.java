@@ -84,7 +84,7 @@ public class CarInterface  {
         return id;
     }
 
-//Variable to check if the day in the month is available, else it will return false, which means that is not available.
+//Variable to check if the day of the month is available, else it will return false, which means that is not available.
     public boolean isAvailable(Month month, int day) {
         Boolean[] availability = hmap.get(month);
         if (availability[day-1] == null) {
@@ -93,7 +93,7 @@ public class CarInterface  {
         return availability[day-1];
     }
 
-//Variable to make the booking in the day of the month. else it will return false, which means that is not available
+//Variable to make the booking of the day of the month. else it will return false, which means that is not available
     public boolean book(Month month, int day) {
         if (hmap.get(month)[day-1]) {
             hmap.get(month)[day-1] = false;

@@ -8,7 +8,7 @@ import java.util.List;
  * This is one of the interfaces you need to implement
  */
 public class RentACarInterface  {
-    //ArrayList created to list all the list of the cars imported from Make.class
+    //ArrayList created to store  the list of  cars imported from Make.class
     private List<CarInterface> cars;
     private String name;
 
@@ -38,7 +38,7 @@ public class RentACarInterface  {
     }
 
 
-    public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {
+    public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {// method that checks if the car is available considering user input
         int currentDay, flag;
 
         for (CarInterface car : cars) {
@@ -86,13 +86,13 @@ public class RentACarInterface  {
     }
 
 
-    public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {
+    public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {//rent a car method to check car availability using user input
 
         if (!checkAvailability(month, day, make, lengthOfRent)) {
             return false;
         }
 
-        int carId = getCarAvailable(month, day, make, lengthOfRent);
+        int carId = getCarAvailable(month, day, make, lengthOfRent);// gives an id number for car available considering user input
 
         for (CarInterface car : cars) {
             if (car.getId() == carId && car.getMake() == make) {

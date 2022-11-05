@@ -16,11 +16,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-// INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
+// https://github.com/LeoStudentCCT/ooc_in_class_lab
 
 
-// INCLUDE HERE THE FULL NAME AND STUDENT NUMBER OF BOTH TEAM MEMBERS 
-// AS A COMMENT!!!!
+// Leonardo Oliveira - 2021361
+// Guilherme Felix - 2021
 
 public class Driver {
 
@@ -53,11 +53,12 @@ public class Driver {
         
         // Try some bookings
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
-        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.NOVEMBER, 1, Make.TOYOTA, 5));
+        System.out.println(rentACar.bookCar(Month.OCTOBER, 1, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.MARCH, 1, Make.FIAT, 10));
         System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
         System.out.println(rentACar.bookCar(Month.MARCH, 10, Make.FORD, 12));
+        System.out.println(rentACar.bookCar(Month.JUNE, 10, Make.FORD, 12));
         
     }
 
