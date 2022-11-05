@@ -16,11 +16,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-// INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
+// https://github.com/LeoStudentCCT/ooc_in_class_lab
 
 
-// INCLUDE HERE THE FULL NAME AND STUDENT NUMBER OF BOTH TEAM MEMBERS 
-// AS A COMMENT!!!!
+// Leonardo Oliveira- 2021361
+//Guilherme Felix - 2021309
 
 public class Driver {
 
@@ -31,7 +31,7 @@ public class Driver {
      */
     public static void main(String[] args) throws IOException {
 
-        BookingSystemInterface bookingSystem = new BookingSystem();
+        BookingSystemInterface bookingSystem = (BookingSystemInterface) new BookingSystem();
 
         String file = "car_rentals.txt";
         BufferedReader in = new BufferedReader(new FileReader(file));

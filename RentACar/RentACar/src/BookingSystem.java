@@ -8,6 +8,6 @@ package ooc.yoursolution;
  *
  * @author leool
  */
-public class Car {
+public class BookingSystem {
     
 }
