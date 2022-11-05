@@ -16,11 +16,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-// https://github.com/LeoStudentCCT/ooc_in_class_lab
+// INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
 
 
-// Leonardo Oliveira- 2021361
-//Guilherme Felix - 2021309
+// INCLUDE HERE THE FULL NAME AND STUDENT NUMBER OF BOTH TEAM MEMBERS 
+// AS A COMMENT!!!!
 
 public class Driver {
 

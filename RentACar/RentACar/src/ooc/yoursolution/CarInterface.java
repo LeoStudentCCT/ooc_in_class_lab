@@ -5,96 +5,101 @@
  */
 package ooc.yoursolution;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import ooc.enums.Make;
 import ooc.enums.Month;
 import java.util.Map;
 
 /**
- * This is one of the interfaces you need to implement
+ * To implement this interface you must to create some private variables to be used only in our classes.
  */
-public interface CarInterface {
-    
-    /**
-     * This method in in charge of creating the calendar of availability 
-     * of the car for the whole year. 
-     * The calendar should be a Map that uses the Month as the key, 
-     * and an array of boolean as its associated value.
-     * 
-     * @return Map of availability
-     */
-    public Map<Month, boolean[]> createAvailability();
-    
-    /**
-     * Getter method for the make of this car.
-     * 
-     * @return the make of the car
-     */
-    public Make getMake();
-    
-    /**
-     * Sets the make of the car.
-     * 
-     * @param make 
-     */
-    public void setMake(Make make);
-    
-    /**
-     * Getter method for the rate of this car.
-     * 
-     * @return rate of the car.
-     */
-    public double getRate();
-    
-    /**
-     * Sets the rate of the car.
-     * 
-     * @param rate 
-     */
-    public void setRate(double rate);
-    
-    /**
-     * Getter method for the availability calendar of this car.
-     * 
-     * @return Map of availability
-     */
-    public Map<Month, boolean[]> getAvailability();
-    
-    
-    /**
-     * Sets the availability calendar of the car.
-     * 
-     * @param availability 
-     */
-    public void setAvailability(Map<Month, boolean[]> availability);
-    
-    /**
-     * Getter method for the id of this car.
-     * 
-     * @return 
-     */
-    public int getId();
-    
-    /**
-     * Returns whether or not the car is available on the given month and day. 
-     * Month is an Emum, day is an int within the limits of the number of days
-     * in a given month
-     * 
-     * @param month Month being checked
-     * @param day day being checked
-     * @return  true or false if it is available or not
-     */
-    public boolean isAvailable(Month month, int day);
-    
-    /**
-     * Book a car on the given month and day. To book a car its availability 
-     * is changed to false on the given month and day. 
-     * This should return true or false if this change is successfully made.
-     * 
-     * @param month month to book
-     * @param day date to book
-     * @return true or false if the booking is completed
-     */
-    public boolean book(Month month, int day);
-    
-    
+public class CarInterface  {
+
+    private int id; 
+    private Make make; //Variable to import the car list
+    private double rate; // Variable to define the price of the rent
+    private Map<Month, Boolean[]> hmap; //Varible of the HashMap
+
+    public CarInterface(int id, Make make, double rate) {
+        this.id = id;
+        this.make = make;
+        this.rate = rate;
+        createAvailability();
+    }
+
+//HashMap imported from the Month.class
+    public Map createAvailability() {
+        hmap = new HashMap<>();
+
+        hmap.put(Month.JANUARY, new Boolean[31]);
+        hmap.put(Month.FEBRUARY, new Boolean[28]);
+        hmap.put(Month.MARCH, new Boolean[31]);
+        hmap.put(Month.APRIL, new Boolean[30]);
+        hmap.put(Month.MAY, new Boolean[31]);
+        hmap.put(Month.JUNE, new Boolean[30]);
+        hmap.put(Month.JULY, new Boolean[31]);
+        hmap.put(Month.AUGUST, new Boolean[31]);
+        hmap.put(Month.SEPTEMBER, new Boolean[30]);
+        hmap.put(Month.OCTOBER, new Boolean[31]);
+        hmap.put(Month.NOVEMBER, new Boolean[30]);
+        hmap.put(Month.DECEMBER, new Boolean[31]);
+
+        return hmap;
+    }
+
+//Getter and Setters
+    public Make getMake() {
+        return make;
+    }
+
+
+    public void setMake(Make make) {
+        this.make = make;
+    }
+
+
+    public double getRate() {
+        return rate;
+    }
+
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+
+    public Map getAvailability() {
+        return hmap;
+    }
+
+
+    public void setAvailability(Map availability) {
+        this.hmap = hmap;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+//Variable to check if the day in the month is available, else it will return false, which means that is not available.
+    public boolean isAvailable(Month month, int day) {
+        Boolean[] availability = hmap.get(month);
+        if (availability[day-1] == null) {
+            availability[day-1] = true;
+        }
+        return availability[day-1];
+    }
+
+//Variable to make the booking in the day of the month. else it will return false, which means that is not available
+    public boolean book(Month month, int day) {
+        if (hmap.get(month)[day-1]) {
+            hmap.get(month)[day-1] = false;
+            return true;
+        }
+
+        return false;
+    }
 }
